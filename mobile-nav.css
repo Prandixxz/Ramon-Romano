@@ -1,0 +1,47 @@
+/* mobile-nav.css - Complemento para versão mobile */
+@media (width < 900px) {
+    /* Menu Hamburguer */
+    .mobile-menu-btn {
+        display: block;
+        background: none;
+        color: white;
+        font-size: 1.8rem;
+        cursor: pointer;
+        z-index: 1000;
+    }
+
+    /* Nav-links original fica escondido */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 80%;
+        height: 100vh;
+        background-color: #18181B;
+        flex-direction: column;
+        gap: 2rem;
+        padding-top: 6rem;
+        transition: left 0.3s ease;
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    /* Overlay quando menu aberto */
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0,0,0,0.5);
+        z-index: 998;
+    }
+
+    .overlay.active {
+        display: block;
+    }
+}
