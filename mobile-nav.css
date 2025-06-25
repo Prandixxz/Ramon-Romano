@@ -1,8 +1,13 @@
-/* mobile-nav.css - Complemento para versão mobile */
-@media (width < 900px) {
-    /* Menu Hamburguer */
+/* mobile-nav.css - AGORA SÓ APARECE NO MOBILE DE VERDADE */
+@media (max-width: 899px) {
+    /* Esconde o botão desktop */
+    .nav-links.desktop {
+        display: none !important;
+    }
+
+    /* Mostra o botão mobile */
     .mobile-menu-btn {
-        display: block;
+        display: block !important;
         background: none;
         color: white;
         font-size: 1.8rem;
@@ -10,8 +15,8 @@
         z-index: 1000;
     }
 
-    /* Nav-links original fica escondido */
-    .nav-links {
+    /* Estilos do menu mobile */
+    .nav-links.mobile {
         position: fixed;
         top: 0;
         left: -100%;
@@ -23,13 +28,13 @@
         padding-top: 6rem;
         transition: left 0.3s ease;
         z-index: 999;
+        display: flex !important;
     }
 
-    .nav-links.active {
+    .nav-links.mobile.active {
         left: 0;
     }
 
-    /* Overlay quando menu aberto */
     .overlay {
         display: none;
         position: fixed;
@@ -43,5 +48,14 @@
 
     .overlay.active {
         display: block;
+    }
+}
+
+@media (min-width: 900px) {
+    .mobile-menu-btn, .overlay {
+        display: none !important;
+    }
+    .nav-links.desktop {
+        display: flex !important;
     }
 }
